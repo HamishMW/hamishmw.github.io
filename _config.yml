@@ -12,6 +12,3 @@ github_username:  HamishMW
 
 # Build settings
 markdown: kramdown
-
-gems:
-    - jekyll-minifier
