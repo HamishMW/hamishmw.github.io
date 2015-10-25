@@ -13,6 +13,7 @@ var gulp         = require('gulp'),
     prefix       = require('gulp-autoprefixer'),
     lr           = require('tiny-lr'),
     notify       = require('gulp-notify'),
+    ghPages      = require('gulp-gh-pages'),
     server       = lr();
 
 // Build stylesheets
@@ -65,6 +66,11 @@ gulp.task('watch', function() {
 
   livereload.listen();
   gulp.watch(['_site/**']).on('change', livereload.changed);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./_site/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['build', 'serve', 'watch']);
