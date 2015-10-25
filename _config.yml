@@ -15,8 +15,6 @@ markdown: kramdown
 
 # Ignore when compiling
 exclude:
-  - _sass
   - node_modules
   - gulpfile.js
   - package.json
-  - js
