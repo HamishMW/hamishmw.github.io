@@ -22,6 +22,7 @@ gulp.task('sass', function() {
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(minifycss())
     .pipe(gulp.dest('_site/assets/css'))
+    .pipe(gulp.dest('assets/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -31,6 +32,7 @@ gulp.task('scripts', function() {
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('_site/assets/js'))
+    .pipe(gulp.dest('assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
