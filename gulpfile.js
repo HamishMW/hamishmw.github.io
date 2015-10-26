@@ -13,26 +13,25 @@ var gulp         = require('gulp'),
     prefix       = require('gulp-autoprefixer'),
     lr           = require('tiny-lr'),
     notify       = require('gulp-notify'),
-    ghPages      = require('gulp-gh-pages'),
     server       = lr();
 
 // Build stylesheets
 gulp.task('sass', function() {
-  return sass('_sass/main.scss', { style: 'expanded' })
+  return sass('src/sass/main.scss', { style: 'expanded' })
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(minifycss())
-    .pipe(gulp.dest('_site/assets/css'))
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('_site/dist/css'))
+    .pipe(gulp.dest('dist/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
 // Build js
 gulp.task('scripts', function() {
-  return gulp.src(['js/*/*.js', 'js/*.js'])
+  return gulp.src(['src/js/*/*.js', 'js/*.js'])
     .pipe(concat('app.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('_site/assets/js'))
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest('_site/dist/js'))
+    .pipe(gulp.dest('dist/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -63,16 +62,11 @@ gulp.task('watch', function() {
     '_posts/**/*'
   ], ['build']);
 
-  gulp.watch('_sass/**', ['sass']);
-  gulp.watch('js/**', ['scripts']);
+  gulp.watch('src/sass/**/*', ['sass']);
+  gulp.watch('src/js/**/*', ['scripts']);
 
   livereload.listen();
   gulp.watch(['_site/**']).on('change', livereload.changed);
-});
-
-gulp.task('deploy', function() {
-  return gulp.src('./_site/**/*')
-    .pipe(ghPages());
 });
 
 gulp.task('default', ['build', 'serve', 'watch']);
