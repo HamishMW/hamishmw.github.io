@@ -17,7 +17,12 @@ var gulp         = require('gulp'),
 
 // Build stylesheets
 gulp.task('sass', function() {
-  return sass('src/sass/main.scss', { style: 'expanded' })
+  return sass('src/sass/main.scss', {
+    style: 'expanded',
+    errLogToConsole: false,
+    onError: function(err) {
+        return notify().write(err);
+    }})
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(minifycss())
     .pipe(gulp.dest('_site/dist/css'))
