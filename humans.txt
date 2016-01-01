@@ -1,0 +1,46 @@
+        
+\   \   \  /   /
+ \ __\   \/   /
+  \   \  /\  /
+   \   \/  \/
+
+The humans.txt file explains the team, technology,
+and graphic assets behind this site.
+
+_______________________________________________________________________________
+
+AUTHOR
+
+Hamish Williams
+Design & web development
+
+twitter.com/hamishmw
+github.com/HamishMW
+
+_______________________________________________________________________________
+
+SPECIAL THANKS
+
+
+
+_______________________________________________________________________________
+
+TECHNOLOGY
+
+jekyll - Static site generator
+jekyllrb.com
+
+SASS - CSS pre-processor
+sass-lang.com
+
+Github - Code collaboration
+github.com
+
+JS libraries include:
+jQuery, Modernizr, respond.js, velocity-animate
+
+_______________________________________________________________________________
+
+FONTS
+
+ars maquette
