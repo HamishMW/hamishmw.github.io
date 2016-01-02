@@ -14,6 +14,9 @@ var gulp         = require('gulp'),
     lr           = require('tiny-lr'),
     notify       = require('gulp-notify'),
     server       = lr();
+    gulp         = require('gulp');
+    imagemin     = require('gulp-imagemin');
+    pngquant     = require('imagemin-pngquant');
 
 // Build stylesheets
 gulp.task('sass', function() {
@@ -32,7 +35,7 @@ gulp.task('sass', function() {
 
 // Build js
 gulp.task('scripts', function() {
-  return gulp.src(['src/js/*/*.js', 'js/*.js'])
+  return gulp.src(['src/js/**/*'])
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('_site/dist/js'))
@@ -40,8 +43,20 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Compress images
+gulp.task('images', function() {
+  return gulp.src('src/img/**/*')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest('dist/img'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
+
 // Jekyll Build
-gulp.task('build', ['sass', 'scripts'], shell.task([ 'jekyll build' ]));
+gulp.task('build', ['sass', 'scripts', 'images'], shell.task([ 'jekyll build' ]));
 
 gulp.task('serve', function() {
   var app = express();
@@ -61,7 +76,7 @@ gulp.task('serve', function() {
 gulp.task('watch', function() {
   gulp.watch([
     '*.html',
-    '_includes/**/*.html',
+    '_includes/**/*',
     '_layouts/**/*.html',
     '_drafts/**/*',
     '_posts/**/*'
@@ -69,6 +84,7 @@ gulp.task('watch', function() {
 
   gulp.watch('src/sass/**/*', ['sass']);
   gulp.watch('src/js/**/*', ['scripts']);
+  gulp.watch('src/img/**/*', ['images']);
 
   livereload.listen();
   gulp.watch(['_site/**']).on('change', livereload.changed);
