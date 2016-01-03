@@ -1,13 +1,46 @@
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   18px;
+@import "../0-vendor/neat/neat-helpers";
+
+// Neat Overrides
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width: 1170px;
+
+$header-height: rem(80);
+
+// Typography
+$base-font-family: "ARS Maquette Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size: 18px;
 $base-font-weight: 300;
 $base-line-height: 1.5;
+$spacing-unit: 30px;
 
-$spacing-unit:     30px;
-
-$text-color:       #111;
+// Color
+$text-color: #414141;
 $background-color: #ffffff;
-$brand-color:      #2a7ae2;
+$white: #ffffff;
+$grey: #979797;
+$green: #50e3c2;
 
+// Breakpoints
+$mobile: 400px;
+$tablet: 768px;
+$desktop: 1000px;
 
+// Mixins
+@mixin flex-container {
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin slash-line {
+  height: rem(700);
+  width: rem(1);
+  display: block;
+  background: $grey;
+  position: absolute;
+  transform: rotate(326.6deg);
+}

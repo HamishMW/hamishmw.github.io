@@ -1,12 +1,17 @@
 ---
 layout: default
+permalink: home
+ref: home
 ---
 
-<section class="home-hero">
-  <h1>Hamish Williams</h1>
-  <p>Full Process Designer</p>
+<section class="intro-hero">
+  <div class="intro-hero--wrapper">
+    <h1 class="intro-hero--title">Hamish Williams</h1>
+    <span class="intro-hero--description">Full Process Designer</span>
 
-  <div class="slashes">
-    {% include svg/slash.svg %}
+    <div class="intro-hero--slashes">
+      <div class="main-slash one">{% include svg/slash.svg url='/dist/img/snow.gif' w='526px' %}</div>
+      <div class="main-slash two">{% include svg/slash.svg url='/dist/img/mountain.jpg' w='1623px' %}</div>
+    </div>
   </div>
 </section>

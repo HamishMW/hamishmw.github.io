@@ -1,0 +1,116 @@
+.intro-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow-x: hidden;
+
+  &--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+  }
+
+  &--slashes {
+    @include size(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--title {
+    text-transform: uppercase;
+    font-size: rem(72);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-bottom: rem(20);
+    z-index: 100;
+    margin-top: $header-height / 2;
+
+    &:before {
+      content: '';
+      display: flex;
+      border-top: 4px solid $text-color;
+      width: rem(103);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: rem(20);
+    }
+  }
+
+  &--description {
+    font-size: rem(24);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: center;
+    z-index: 100;
+  }
+
+  .main-slash {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  .main-slash.one {
+    margin-left: rem(80);
+    margin-top: rem(220);
+
+    &:before {
+      @include slash-line;
+      content: '';
+      top: 0;
+      left: rem(-140);
+    }
+
+    &:after {
+      @include slash-line;
+      content: '';
+      top: rem(-150);
+      left: rem(30);
+    }
+  }
+
+  .main-slash.two {
+    margin-left: rem(210);
+
+    &:after {
+      @include slash-line;
+      content: '';
+      top: rem(90);
+      right: rem(-40);
+    }
+
+    .slash-image {
+      // animation: panX 80s ease infinite alternate;
+      x: -20%;
+    }
+
+    // .slash-clip {
+    //   animation: panXCounter 165s ease infinite;
+    // }
+  }
+
+  @keyframes panX {
+    0% {
+      x: -20%;
+    }
+    100% {
+      x: -90%;
+    }
+  }
+
+  // @keyframes panXCounter {
+  //   0% {
+  //     transform: translateX(0%);
+  //   }
+  //   100% {
+  //     transform: translateX(115.7%);
+  //   }
+  // }
+}
