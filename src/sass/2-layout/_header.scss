@@ -4,10 +4,15 @@
 
   &--wrapper {
     position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     transform: translateZ(0);
     z-index: 900;
+
+    @include media($mobile) {
+      position: absolute;
+    }
   }
 
   &--logo {
@@ -16,6 +21,19 @@
     background: $green;
     align-items: center;
     justify-content: center;
+    padding: rem(8);
+
+    @include media($tablet) {
+      @include size(rem(70));
+      padding: rem(5);
+    }
+
+    @include media($mobile) {
+      @include size(rem(60));
+      padding: rem(5);
+    }
+
+
   }
 
   svg {
@@ -25,6 +43,14 @@
   &--nav {
     display: flex;
     align-items: center;
+    opacity: 1;
+    transition: all 0.3s ease;
+    visibility: visible;
+
+    &.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   &--navlinks {
@@ -40,6 +66,16 @@
     font-weight: 500;
     margin-left: rem(35);
     margin-bottom: 0;
+
+    @include media($tablet) {
+      font-size: rem(16);
+      margin-left: rem(28);
+    }
+
+    @include media($mobile) {
+      font-size: rem(13);
+      margin-left: rem(16);
+    }
   }
 
   &--navlinks a {
@@ -47,7 +83,7 @@
     text-decoration: none;
     padding: rem(29) 0;
     position: relative;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 
     &:hover {
       color: $green;
@@ -67,7 +103,7 @@
       width: 100%;
       position: absolute;
       transform: scaleX(0);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
     }
   }
 }

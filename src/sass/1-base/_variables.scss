@@ -23,9 +23,9 @@ $grey: #979797;
 $green: #50e3c2;
 
 // Breakpoints
-$mobile: 400px;
-$tablet: 768px;
-$desktop: 1000px;
+$mobile: max-width 400px;
+$tablet: max-width 768px;
+$desktop: max-width 1000px;
 
 // Mixins
 @mixin flex-container {
@@ -38,7 +38,7 @@ $desktop: 1000px;
 
 @mixin slash-line {
   height: rem(700);
-  width: rem(1);
+  width: 1px;
   display: block;
   background: $grey;
   position: absolute;
