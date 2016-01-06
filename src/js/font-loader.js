@@ -1,12 +1,20 @@
 (function(window, document, $) {
   "use strict";
 
-  var observer = new FontFaceObserver('ars_maquette', {});
+  var observer = new FontFaceObserver('ars_maquette', {
+    weight: 400
+  });
 
-  observer.check().then(function () {
+  var observer2 = new FontFaceObserver('ars_maquette', {
+    weight: 500
+  });
+
+  var observer3 = new FontFaceObserver('ars_maquette', {
+    weight: 700
+  });
+
+  Promise.all([observer.check(), observer2.check(), observer3.check()]).then(function () {
     $('html').addClass('fonts-loaded');
-  }, function () {
-    console.log('Font is not available');
   });
 
 }(window, document, window.jQuery));
