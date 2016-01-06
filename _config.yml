@@ -1,5 +1,5 @@
 # Site settings
-title: Hamish Williams – Designer
+title: Hamish Williams – Full-Process Designer
 email: your-email@domain.com
 description: "Yeah, I'm a designer"
 baseurl: ""
@@ -9,6 +9,8 @@ github_username:  HamishMW
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-sitemap
 
 # Ignore when compiling
 exclude:
