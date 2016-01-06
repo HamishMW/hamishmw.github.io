@@ -11,12 +11,8 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   font-weight: $base-font-weight;
-  font-family: $fallback-fonts;
-  color: $text-color; 
-}
-
-.fonts-loaded body {
   font-family: $base-font-family;
+  color: $text-color; 
 }
 
 // Typography
