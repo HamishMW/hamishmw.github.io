@@ -7,6 +7,7 @@ $grid-columns: 12;
 $max-width: 1170px;
 
 $header-height: rem(80);
+$slash-angle: 33.5deg;
 
 // Typography
 $base-font-family: "ARS Maquette Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -42,5 +43,5 @@ $desktop: max-width 1000px;
   display: block;
   background: $grey;
   position: absolute;
-  transform: rotate(326.6deg);
+  transform: rotate(-$slash-angle);
 }

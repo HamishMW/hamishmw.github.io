@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
+  position: relative;
 
   &--wrapper {
     display: flex;
@@ -14,23 +16,22 @@
   }
 
   &--slashes {
-    @include size(100%);
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     position: absolute;
-    width: 100vw;
-    top: rem(-400);
-    left: rem(20);
+    left: 0;
+    top: 0;
 
-    @include media($tablet) {
-      left: rem(-70);
-    }
+    // @include media($tablet) {
+    //   left: rem(-70);
+    // }
 
-    @include media($mobile) {
-      left: rem(-120);
-    }
+    // @include media($mobile) {
+    //   left: rem(60);
+    // }
   }
 
   &--title {
@@ -87,53 +88,6 @@
     }
   }
 
-  .main-slash {
-    position: absolute;
-  }
-
-  .main-slash.one {
-    margin-left: rem(80);
-    margin-top: rem(220);
-
-    &:before {
-      @include slash-line;
-      content: '';
-      top: 0;
-      left: rem(-140);
-    }
-
-    &:after {
-      @include slash-line;
-      content: '';
-      top: rem(-150);
-      left: rem(30);
-    }
-  }
-
-  .main-slash.two {
-    margin-left: rem(210);
-
-    &:after {
-      @include slash-line;
-      content: '';
-      top: rem(90);
-      right: rem(-40);
-    }
-
-    .slash-image {
-      animation: panX 50s ease infinite alternate;
-      x: -20%;
-
-      @include media($mobile) {
-        animation: none;
-      }
-    }
-
-    // .slash-clip {
-    //   animation: panXCounter 165s ease infinite;
-    // }
-  }
-
   &--scroll-arrow {
     display: flex;
     align-items: center;
@@ -147,24 +101,76 @@
       outline: none;
     }
   }
+}
 
-  @keyframes panX {
+.main-slash {
+  position: relative;
+
+  @keyframes bonetrousle {
     0% {
-      x: -20%;
+      transform: translateX(-20%) skewX(-$slash-angle);
     }
     100% {
-      x: -90%;
+      transform: translateX(-70%) skewX(-$slash-angle);
     }
   }
 
-  // @keyframes panXCounter {
-  //   0% {
-  //     transform: translateX(0%);
-  //   }
-  //   100% {
-  //     transform: translateX(115.7%);
-  //   }
-  // }
+  .slash-clipmask {
+    overflow: hidden;
+    width: rem(170);
+    height: rem(804);
+    transform: skewX($slash-angle);
+  }
+}
+
+.main-slash.one {
+  left: rem(100);
+  top: 230px;
+
+  .slash-image {
+    position: relative;
+    left: rem(-270);
+    width: rem(702);
+    height: rem(804);
+    background: url('/dist/img/snow.gif') no-repeat $green;
+    background-size: rem(356);
+    transform: skewX(-$slash-angle);
+  }
+
+  &:before {
+    @include slash-line;
+    content: '';
+    top: 0;
+    left: rem(-350);
+    top: rem(40);
+
+  }
+
+  &:after {
+    @include slash-line;
+    content: '';
+    top: rem(-135);
+    left: rem(-225);
+  }
+}
+
+.main-slash.two {
+  left: rem(120);
+
+  .slash-image {
+    background-image: url('/dist/img/mountain.jpg');
+    width: rem(1623);
+    height: rem(804);
+    position: relative;
+    animation: bonetrousle 50s linear infinite alternate;
+  }
+
+  &:after {
+    @include slash-line;
+    content: '';
+    top: rem(90);
+    left: rem(400);
+  }
 }
 
 .placeholder {

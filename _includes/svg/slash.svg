@@ -1,9 +1,0 @@
-<svg width="702" height="804" viewBox="0 0 702 804" xmlns="http://www.w3.org/2000/svg">
-	<defs>
-		<clipPath id="slashClip">
-			<path class="slash-clip" d="M0 0h170l531.352 803.492h-170L0 0z"/>
-		</clipPath>
-	</defs>
-  <path class="slash-image" clip-path="url(#slashClip)" d="M0 0h170l531.352 803.492h-170L0 0z" fill="#50E3C2"/>
-	<image class="slash-image" clip-path="url(#slashClip)" xlink:href="{{ include.url }}" x="0" y="0" width="{{ include.w }}" height="804px"/>
-</svg>
