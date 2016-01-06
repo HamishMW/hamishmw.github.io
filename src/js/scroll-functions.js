@@ -1,4 +1,5 @@
 (function(window, document, $) {
+  //"use strict";
 
   var ticking = false;
   var lastScrollY = 0;
@@ -8,7 +9,7 @@
   var nav = $('.site-header--nav');
   var title = $('.intro-hero--title');
   var body = $('body');
-  var navHidePosition = title.offset().top - 100;
+  var navHidePosition = 300;
 
   function onResize() {
     updateElements(window.pageYOffset);

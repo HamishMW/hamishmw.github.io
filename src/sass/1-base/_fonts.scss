@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'ars_maquette';
+  src: url('/dist/fonts/arsmaquette-bold.woff2') format('woff2'),
+       url('/dist/fonts/arsmaquette-bold.woff') format('woff'),
+       url('/dist/fonts/arsmaquette-bold.ttf') format('truetype');
+  font-weight: $bold-weight;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ars_maquette';
+  src: url('/dist/fonts/arsmaquette-medium.woff2') format('woff2'),
+       url('/dist/fonts/arsmaquette-medium.woff') format('woff'),
+       url('/dist/fonts/arsmaquette-medium.ttf') format('truetype');
+  font-weight: $medium-weight;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ars_maquette';
+  src: url('/dist/fonts/arsmaquette-regular.woff2') format('woff2'),
+       url('/dist/fonts/arsmaquette-regular.woff') format('woff'),
+       url('/dist/fonts/arsmaquette-regular.ttf') format('truetype');
+  font-weight: $regular-weight;
+  font-style: normal;
+}

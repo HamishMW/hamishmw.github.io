@@ -10,9 +10,13 @@ $header-height: rem(80);
 $slash-angle: 33.5deg;
 
 // Typography
-$base-font-family: "ARS Maquette Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fallback-fonts: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "ars_maquette", $fallback-fonts;
 $base-font-size: 18px;
-$base-font-weight: 300;
+$regular-weight: 400;
+$medium-weight: 500;
+$bold-weight: 700;
+$base-font-weight: $regular-weight;
 $base-line-height: 1.5;
 $spacing-unit: 30px;
 

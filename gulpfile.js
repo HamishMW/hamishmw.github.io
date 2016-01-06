@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 
 // Build js
 gulp.task('scripts', function() {
-  return gulp.src(['src/js/**/*'])
+  return gulp.src(['src/js/vendor/*', 'src/js/*'])
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('_site/dist/js'))
