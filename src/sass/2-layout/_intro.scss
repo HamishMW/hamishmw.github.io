@@ -13,6 +13,10 @@
     flex-direction: column;
     position: relative;
     padding: 0 rem(20);
+
+    @include media($mobile) {
+      margin-top: rem(-20);
+    }
   }
 
   &--title {
@@ -114,17 +118,51 @@
   }
 
   .main-slash.one {
+    $sprite-width: rem(8103);
     left: rem(160);
-    top: 230px;
+    top: rem(230);
+
+    @keyframes snowFall {
+       100% { transform: translateX(-$sprite-width); }
+    }
 
     .slash-image {
       position: relative;
       left: rem(-270);
-      width: rem(702);
+      width: rem(710);
       height: rem(804);
-      background: url('/dist/img/snow.gif') no-repeat $green;
-      background-size: rem(356);
       transform: skewX(-$slash-angle);
+      background-color: $green;
+    }
+
+    .sprite {
+      position: relative;
+      width: rem(220);
+      transform: scale(1.6);
+      transform-origin: top left;
+      overflow: hidden;
+    }
+
+    .sprite:before {
+      content: '';
+      display: block;
+      width: $sprite-width;
+      height: rem(300);
+      position: relative;
+      background: url('/dist/img/snow-sprite.png') no-repeat;
+      animation: snowFall 1.5s steps(37) infinite;
+    }
+
+    .sprite:after {
+      content: '';
+      display: block;
+      width: rem(60);
+      height: rem(200);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparentize($green, 1), $green);
+      transform: translateZ(0);
     }
 
     &:before {
@@ -147,7 +185,7 @@
   .main-slash.two {
     left: rem(120);
 
-    @keyframes bonetrousle {
+    @keyframes mountainPan {
       0% {
         transform: translateX(-20%) skewX(-$slash-angle);
       }
@@ -162,7 +200,7 @@
       width: rem(1623);
       height: rem(804);
       position: relative;
-      animation: bonetrousle 50s linear infinite alternate;
+      animation: mountainPan 50s linear infinite alternate;
     }
 
     &:after {
