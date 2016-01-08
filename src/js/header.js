@@ -1,10 +1,10 @@
 (function(window, document, $) {
   "use strict";
-
-  var home = $('.home');
-  var scrollTo = $('.scroll-to');
-
+  
   $(function(){
+    var home = $('.home');
+    var scrollTo = $('.scroll-to');
+  
     scrollTo.on("click", function(e) {
 
       if(home.length > 0) {
