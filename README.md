@@ -1,3 +1,15 @@
-# This is a readme
+## Design Portfolio 2016
+A portfolio site to showcase some of the projects I'm working on.
 
-Yeah I'll probably fill this out properly later
+## Installation
+
+Requires:
+- Nodejs
+- Jekyll 
+- Gulp
+
+Then run `npm install`.
+
+## Usage
+
+simply run `gulp` and the site will be built and served locally at `localhost:3000`

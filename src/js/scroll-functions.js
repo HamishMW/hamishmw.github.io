@@ -1,5 +1,5 @@
 (function(window, document, $) {
-  //"use strict";
+  "use strict";
 
   var ticking = false;
   var lastScrollY = 0;
@@ -15,7 +15,7 @@
     updateElements(window.pageYOffset);
   }
 
-  function onScroll(evt) {
+  function onScroll(e) {
 
     if(!ticking) {
       ticking = true;
@@ -55,15 +55,14 @@
   }
 
   $(function(){
-    updateElements(window.pageYOffset);
-    showHideNav(window.pageYOffset);
+    onScroll();
   });
 
   window.addEventListener('resize', onResize, false);
   window.addEventListener('scroll', onScroll, false);
 
   $('body').on("mousemove", function(evt) {
-    if (evt.clientY < 130) {
+    if (evt.clientY < 250) {
       nav.removeClass('is-hidden');
     } else if(lastScrollY > navHidePosition) {
       nav.addClass('is-hidden');

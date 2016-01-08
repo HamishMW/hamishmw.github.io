@@ -1,11 +1,11 @@
 <header class="site-header">
   <div class="site-header--wrapper">
-    <a class="site-header--logo" href="{{ site.baseurl }}/">{% include svg/hw.svg %}</a>
+    <a class="site-header--logo" href="{% if page.ref == 'home' %}#{% else %}{{ site.baseurl }}/{% endif %}">{% include svg/hw.svg %}</a>
     <nav class="site-header--nav">
       <ul class="site-header--navlinks">
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Details</a></li>
-        <li><a href="#">Journal</a></li>
+        <li><a class="scroll-to" href="/#projects">Projects</a></li>
+        <li><a href="{{ site.baseurl }}/details">Details</a></li>
+        <li><a href="{{ site.baseurl }}/details">Journal</a></li>
       </ul>
     </nav>
   </div>

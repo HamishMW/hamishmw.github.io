@@ -21,7 +21,7 @@
     background: $green;
     align-items: center;
     justify-content: center;
-    padding: rem(8);
+    padding: rem(10);
 
     @include media($tablet) {
       @include size(rem(70));
@@ -32,8 +32,6 @@
       @include size(rem(60));
       padding: rem(5);
     }
-
-
   }
 
   svg {
