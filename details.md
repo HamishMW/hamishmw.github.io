@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: details
 title: Details
+ref: details
 permalink: /details/
 ---
 

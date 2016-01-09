@@ -1,0 +1,4 @@
+.details-section {
+  @include flex-container;
+  margin-top: rem(60);
+}

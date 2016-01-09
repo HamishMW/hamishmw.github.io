@@ -4,8 +4,8 @@
     <nav class="site-header--nav">
       <ul class="site-header--navlinks">
         <li><a class="scroll-to" href="/#projects">Projects</a></li>
-        <li><a href="{{ site.baseurl }}/details">Details</a></li>
-        <li><a href="{{ site.baseurl }}/details">Journal</a></li>
+        <li><a href="{% if page.ref == 'details' %}#{% else %}{{ site.baseurl }}{{ site.baseurl }}/details{% endif %}">Details</a></li>
+        <li><a href="{% if page.ref == 'details' %}#{% else %}{{ site.baseurl }}{{ site.baseurl }}/details{% endif %}">Journal</a></li>
       </ul>
     </nav>
   </div>

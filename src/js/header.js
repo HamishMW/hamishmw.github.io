@@ -1,6 +1,6 @@
 (function(window, document, $) {
   "use strict";
-  
+
   $(function(){
     var home = $('.home');
     var scrollTo = $('.scroll-to');
@@ -14,9 +14,9 @@
         var jLinkHash = $(linkHash);
         var scrollOffset = jLinkHash.offset().top;
 
-        $("html, body").stop().animate({
+        $('html, body').stop().animate({
             scrollTop: scrollOffset
-        }, 360, "swing", function() {
+        }, 400, 'swing', function() {
             window.location.hash = linkHash
         });
       }

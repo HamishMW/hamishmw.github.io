@@ -159,9 +159,9 @@
       width: rem(60);
       height: rem(200);
       position: absolute;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, transparentize($green, 1), $green);
+      right: rem(-1);
+      bottom: rem(-1);
+      background: linear-gradient(90deg, transparentize($green, 1) 0%, $green 90%);
       transform: translateZ(0);
     }
 
@@ -183,6 +183,7 @@
   }
 
   .main-slash.two {
+    $bg-color: #8aefdc;
     left: rem(120);
 
     @keyframes mountainPan {
@@ -195,16 +196,25 @@
     }
 
     .slash-image {
-      background: url('/dist/img/mountain.jpg') no-repeat #8aefdc;
+      background: url('/dist/img/mountain.jpg') no-repeat $bg-color;
       background-size: cover;
       transform: translateX(-20%) skewX(-$slash-angle);
       width: rem(1623);
       height: rem(804);
       position: relative;
+
+      @include media($mobile) {
+        background-image: none;
+        background-color: $bg-color;
+      }
     }
 
     &.is-animating .slash-image {
       animation: mountainPan 50s linear infinite alternate;
+
+      @include media($mobile) {
+        animation: none;
+      }
     }
 
     &:after {

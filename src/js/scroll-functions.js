@@ -74,5 +74,4 @@
 
     initialize();
   });
-
 }(window, document, window.jQuery));

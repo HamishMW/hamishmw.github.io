@@ -36,9 +36,10 @@ $desktop: max-width 1000px;
 @mixin flex-container {
   display: flex;
   flex-direction: column;
-  max-width: $max-width;
+  max-width: $max-width + 30;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 rem(30);
 }
 
 @mixin slash-line {
