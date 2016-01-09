@@ -138,7 +138,7 @@
     .sprite {
       position: relative;
       width: rem(220);
-      transform: scale(1.6);
+      transform: scale(1.7);
       transform-origin: top left;
       overflow: hidden;
     }
@@ -150,7 +150,7 @@
       height: rem(300);
       position: relative;
       background: url('/dist/img/snow-sprite.png') no-repeat;
-      animation: snowFall 1.5s steps(37) infinite;
+      animation: snowFall 1.4s steps(37) infinite;
     }
 
     .sprite:after {
@@ -195,11 +195,15 @@
     }
 
     .slash-image {
-      background-image: url('/dist/img/mountain.jpg');
+      background: url('/dist/img/mountain.jpg') no-repeat #8aefdc;
       background-size: cover;
+      transform: translateX(-20%) skewX(-$slash-angle);
       width: rem(1623);
       height: rem(804);
       position: relative;
+    }
+
+    &.is-animating .slash-image {
       animation: mountainPan 50s linear infinite alternate;
     }
 
