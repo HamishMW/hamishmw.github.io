@@ -31,10 +31,10 @@ jekyll - Static site generator
 jekyllrb.com
 
 JS libraries include:
-jQuery, Modernizr, respond.js, velocity-animate
+jQuery, modernizr
 
 _______________________________________________________________________________
 
 FONTS
 
-ars maquette
+Ars Maquette

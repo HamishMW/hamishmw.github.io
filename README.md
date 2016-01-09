@@ -1,4 +1,4 @@
-## Design Portfolio 2016
+# Design Portfolio 2016
 A portfolio site to showcase some of the projects I'm working on.
 
 ## Dependencies
@@ -13,8 +13,6 @@ To use this project, you'll need the following things installed on your machine.
 
 1. Clone this repo, or download it into a directory of your choice.
 2. Inside the directory, run `npm install`.
-
-Then run `npm install`.
 
 ## Usage
 
