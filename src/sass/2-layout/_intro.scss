@@ -14,7 +14,7 @@
     position: relative;
     padding: 0 rem(20);
 
-    @include media($mobile) {
+    @include mobile {
       margin-top: rem(-20);
     }
   }
@@ -39,13 +39,13 @@
       margin-bottom: rem(20);
     }
 
-    @include media($tablet) {
+    @include tablet {
       font-size: rem(48);
       line-height: 1;
       margin-top: rem(30);
     }
 
-    @include media($mobile) {
+    @include mobile {
       margin-top: rem(20);
 
       &:after {
@@ -68,7 +68,7 @@
     text-align: center;
     z-index: 100;
 
-    @include media($mobile) {
+    @include mobile {
      font-size: rem(20);
     }
   }
@@ -86,7 +86,7 @@
       outline: none;
     }
 
-    @include media($mobile) {
+    @include mobile {
       display: none;
     }
   }
@@ -203,7 +203,7 @@
       height: rem(804);
       position: relative;
 
-      @include media($mobile) {
+      @include mobile {
         background-image: none;
         background-color: $bg-color;
       }
@@ -212,7 +212,7 @@
     &.is-animating .slash-image {
       animation: mountainPan 50s linear infinite alternate;
 
-      @include media($mobile) {
+      @include mobile {
         animation: none;
       }
     }
@@ -231,7 +231,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid rgba(0, 0, 0, 0.12);
+  // border: 4px solid rgba(0, 0, 0, 0.12);
   width: 100%;
   margin-top: 50px;
   margin-bottom: 100px;

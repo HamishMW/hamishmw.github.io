@@ -1,4 +1,21 @@
 .details-section {
   @include flex-container;
-  margin-top: rem(60);
+  margin-top: rem(120);
+
+  &--wrapper {
+    @include flex-row;
+  }
+
+  &--description {
+    flex: 0 0 58.3333%;
+    @include shift(1);
+
+    @include max-width {
+      @include shift(0)
+    }
+
+    p {
+      font-size: rem(26);
+    }
+  }
 }

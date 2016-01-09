@@ -1,6 +1,6 @@
 @import "../0-vendor/neat/neat-helpers";
 
-// Neat Overrides
+// Grid
 $column: 90px;
 $gutter: 30px;
 $grid-columns: 12;
@@ -18,7 +18,9 @@ $medium-weight: 500;
 $bold-weight: 700;
 $base-font-weight: $regular-weight;
 $base-line-height: 1.5;
-$spacing-unit: 30px;
+$spacing-unit: rem(30);
+$outer-gutter: 30px;
+$total-width: $max-width + $outer-gutter * 2;
 
 // Color
 $text-color: #414141;
@@ -28,20 +30,11 @@ $grey: #979797;
 $green: #50e3c2;
 
 // Breakpoints
-$mobile: max-width 400px;
-$tablet: max-width 768px;
-$desktop: max-width 1000px;
+$mobile-width: 400px;
+$tablet-width: 768px;
+$desktop-width: 1000px;
 
 // Mixins
-@mixin flex-container {
-  display: flex;
-  flex-direction: column;
-  max-width: $max-width + 30;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 rem(30);
-}
-
 @mixin slash-line {
   height: rem(700);
   width: 1px;

@@ -2,6 +2,10 @@
 	@include flex-container;
   flex-direction: row;
 
+  @include max-width {
+    padding: 0;
+  }
+
   &--wrapper {
     position: fixed;
     top: 0;
@@ -10,7 +14,11 @@
     transform: translateZ(0);
     z-index: 900;
 
-    @include media($mobile) {
+    @media (min-width: $max-width) {
+      margin-left: rem(-12);
+    }
+
+    @include max-width {
       position: absolute;
     }
   }
@@ -23,12 +31,12 @@
     justify-content: center;
     padding: rem(10);
 
-    @include media($tablet) {
+    @include tablet {
       @include size(rem(70));
       padding: rem(5);
     }
 
-    @include media($mobile) {
+    @include mobile {
       @include size(rem(60));
       padding: rem(5);
     }
@@ -65,12 +73,12 @@
     margin-left: rem(35);
     margin-bottom: 0;
 
-    @include media($tablet) {
+    @include tablet {
       font-size: rem(16);
       margin-left: rem(28);
     }
 
-    @include media($mobile) {
+    @include mobile {
       font-size: rem(13);
       margin-left: rem(16);
     }

@@ -1,0 +1,42 @@
+@mixin flex-container {
+  display: flex;
+  flex-direction: column;
+  max-width: $total-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $outer-gutter;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+// Breakpoints
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin max-width {
+  @media (max-width: #{$max-width}) {
+    @content;
+  }
+}
+
+
+

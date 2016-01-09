@@ -6,14 +6,21 @@
     var ticking = false;
     var lastScrollY = 0;
     var lastClientY = 0;
-    var navHidePosition = 300;
-    var navShowPosition = 200;
 
     var body = $('body');
     var nav = $('.site-header--nav');
     var title = $('.intro-hero--title');
     var mainSlash1 = $('.main-slash.one');
     var mainSlash2 = $('.main-slash.two');
+
+    var navShowPosition = 200;
+    var navHidePosition = 0;
+
+    if($('home').length > 0) {
+      navHidePosition = 300;
+    } else {
+      navHidePosition = 100;
+    }
 
     mainSlash2.addClass('is-animating');
 

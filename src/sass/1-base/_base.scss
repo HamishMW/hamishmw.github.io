@@ -1,6 +1,6 @@
 @import
   "variables",
-  "normalize",
+  "grid",
   "syntax",
   "fonts"
 ;
@@ -60,7 +60,7 @@ h6 {
 }
 
 // Larger than phablet 
-@include media(min-width, 550px) {
+@media(min-width: 550px) {
   h1 { font-size: rem(50); }
   h2 { font-size: rem(42); }
   h3 { font-size: rem(36); }

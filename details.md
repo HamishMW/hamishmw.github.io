@@ -5,8 +5,4 @@ ref: details
 permalink: /details/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Hi, I'm Hamish Williams. I am an alumnus of The University of Waikato's Bachelor of Computer Graphic Design – a comprehensive degree that combines both technical and creative skills. I worked as a graphic designer in New Zealand for a year before moving to Sydney, where I now work as a digital designer at Smart Sparrow. Drop me a message and we can grab sushi sometime.
