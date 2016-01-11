@@ -6,8 +6,9 @@ A portfolio site to showcase some of the projects I'm working on.
 To use this project, you'll need the following things installed on your machine.
 
 1. [Jekyll](http://jekyllrb.com/) - `$ gem install jekyll`
-2. [NodeJS](http://nodejs.org) - use the installer.
-3. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need sudo)
+2. [Jekyll Sitemap](https://github.com/jekyll/jekyll-sitemap) - `$ gem install jekyll-sitemap`
+3. [NodeJS](http://nodejs.org) - use the installer.
+4. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need sudo)
 
 ## Local Installation
 

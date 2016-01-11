@@ -2,17 +2,23 @@
 layout: default
 ---
 
-<section class="details-section">
-  <div class="details-section--wrapper">
-    <div class="details-section--description">
-      <div class="header">
-        <span class="context-heading">Profile</span>
-        <h1>Hamish Williams</h1>
+<section class="profile">
+  <div class="profile--wrapper">
+    <aside class="profile--sidebar">
+      <div class="profile--picture">
+        <img src="/dist/img/profile.jpg" alt="A picture of my face">
       </div>
+      <div class="profile--experience">
+      </div>
+    </aside>
+    <div class="profile--description">
+      <h1>Details</h1>
       {{ content }}
     </div>
   </div>
-  <div class="details-section--slashes">
+  <div class="profile--slashes">
+    <div class="main-slash one"></div>
+    <div class="main-slash two"></div>
   </div>
 </section>
 

@@ -15,7 +15,7 @@
 }
 
 main {
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 .details main {
@@ -35,4 +35,10 @@ body:not(.home) main {
 .unloading--start section {
   transform: translateY(10px);
   opacity: 0;
+}
+
+.context-heading {
+  padding-bottom: rem(13);
+  border-bottom: 6px solid $text-color;
+  display: block;
 }

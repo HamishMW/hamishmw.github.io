@@ -1,4 +1,7 @@
 .site-header {
+  $nav-spacing: rem(35);
+  $header-outset: $header-height + $nav-spacing;
+
 	@include flex-container;
   flex-direction: row;
 
@@ -15,8 +18,8 @@
     z-index: 900;
     color: $green;
 
-    @media (min-width: $max-width) {
-      margin-left: rem(-12);
+    @media (min-width: $total-width + strip-units($header-outset* 2)) {
+      margin-left: -$header-outset;
     }
 
     @include max-width {
@@ -76,7 +79,7 @@
     text-transform: uppercase;
     letter-spacing: 0.07em;
     font-weight: $medium-weight;
-    margin-left: rem(35);
+    margin-left: $nav-spacing;
     margin-bottom: 0;
 
     @include tablet {

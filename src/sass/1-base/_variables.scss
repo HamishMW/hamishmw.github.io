@@ -2,9 +2,10 @@
 
 // Grid
 $column: 90px;
-$gutter: 30px;
+$gutter: 40px;
+$outer-gutter: 20px;
 $grid-columns: 12;
-$max-width: 1170px;
+$max-width: 980px;
 
 $header-height: rem(80);
 $slash-angle: 33.5deg;
@@ -19,7 +20,6 @@ $bold-weight: 700;
 $base-font-weight: $regular-weight;
 $base-line-height: 1.5;
 $spacing-unit: rem(30);
-$outer-gutter: 30px;
 $total-width: $max-width + $outer-gutter * 2;
 
 // Color

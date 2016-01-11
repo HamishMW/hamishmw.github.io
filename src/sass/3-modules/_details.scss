@@ -4,21 +4,33 @@
   }
 }
 
-.details-section {
+.profile {
   @include flex-container;
   margin-top: rem(120);
 
   &--wrapper {
     @include flex-row;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &--sidebar {
+    flex: 0 0 33.3333%;
+    padding-right: $gutter;
+
+    img {
+      width: 100%;
+    }
+
+    @include tablet {
+      padding-right: 0;
+    }
   }
 
   &--description {
-    @include shift(1);
     flex: 0 0 58.3333%;
-
-    @include max-width {
-      @include shift(0)
-    }
 
     @include tablet {
       flex: 0 0 100%;
@@ -33,16 +45,7 @@
 
     p {
       font-size: rem(26);
-    }
-
-    .header {
-      width: rem(290);
-    }
-
-    .context-heading {
-      padding-bottom: rem(13);
-      border-bottom: 6px solid $text-color;
-      display: block;
+      font-weight: $medium-weight;
     }
   }
 
