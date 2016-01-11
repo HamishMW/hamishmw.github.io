@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body>
+  <body class="{{ page.ref }}">
     {% include header.html %}
-    <main class="{{ page.ref }}">
+    <main>
       {{ content }}
     </main>
     {% include footer.html %}

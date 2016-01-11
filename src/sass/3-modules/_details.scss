@@ -1,3 +1,9 @@
+.details {
+  .site-header--wrapper {
+    color: $indigo;
+  }
+}
+
 .details-section {
   @include flex-container;
   margin-top: rem(120);
@@ -7,15 +13,47 @@
   }
 
   &--description {
-    flex: 0 0 58.3333%;
     @include shift(1);
+    flex: 0 0 58.3333%;
 
     @include max-width {
       @include shift(0)
     }
 
+    @include tablet {
+      flex: 0 0 100%;
+    }
+
+    h1 {
+      font-size: rem(72);
+      font-weight: $medium-weight;
+      line-height: 0.9;
+      margin: rem(40) 0 rem(50);
+    }
+
     p {
       font-size: rem(26);
+    }
+
+    .header {
+      width: rem(290);
+    }
+
+    .context-heading {
+      padding-bottom: rem(13);
+      border-bottom: 6px solid $text-color;
+      display: block;
+    }
+  }
+
+  .main-slash {
+    position: relative;
+
+    .slash-clipmask {
+      overflow: hidden;
+      width: rem(170);
+      height: rem(804);
+      transform: skewX($slash-angle);
     }
   }
 }

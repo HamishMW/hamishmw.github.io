@@ -1,3 +1,10 @@
 @import
   'details'
 ;
+
+.context-heading {
+  font-weight: $bold-weight;
+  letter-spacing: 0.1em;
+  font-size: rem(24);
+  text-transform: uppercase;
+}

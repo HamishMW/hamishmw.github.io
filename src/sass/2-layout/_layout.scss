@@ -18,11 +18,11 @@ main {
   overflow-x: hidden; 
 }
 
-main.details {
+.details main {
   animation: pageFadeIn 0.4s ease-in;
 }
 
-main:not(.home) {
+body:not(.home) main {
   margin-top: $header-height;
 }
 

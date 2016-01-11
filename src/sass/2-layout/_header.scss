@@ -13,6 +13,7 @@
     flex-direction: row;
     transform: translateZ(0);
     z-index: 900;
+    color: $green;
 
     @media (min-width: $max-width) {
       margin-left: rem(-12);
@@ -26,10 +27,15 @@
   &--logo {
     @include size($header-height);
     display: flex;
-    background: $green;
+    color: inherit;
+    background: currentColor;
     align-items: center;
     justify-content: center;
     padding: rem(10);
+
+    &:hover {
+      color: inherit;
+    }
 
     @include tablet {
       @include size(rem(70));
@@ -92,24 +98,26 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: $green;
+      color: inherit;
     }
 
     &:hover:after {
       transform: scaleX(1);
+      background: currentColor;
       opacity: 1;
     }
 
     &:after {
       content: '';
-      opacity: 0;
       height: rem(3);
-      background: $green;
+      color: inherit;
+      background: currentColor;
       display: block;
       width: 100%;
       position: absolute;
       transform: scaleX(0);
-      transition: transform 0.3s ease;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease, background 0s linear;
     }
   }
 }
