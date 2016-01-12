@@ -8,7 +8,6 @@
   @include flex-container;
   position: relative;
   margin-top: rem(220);
-  overflow: visible;
 
   @include mobile {
     margin-top: rem(120);
@@ -16,10 +15,7 @@
 
   &--wrapper {
     @include flex-row;
-
-    @include tablet {
-      flex-direction: column;
-    }
+    flex-wrap: wrap;
   }
 
   &--sidebar {
@@ -27,19 +23,21 @@
     flex: 0 0 33.3333%;
     padding-right: $gutter;
     flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
 
     img {
       width: 100%;
     }
 
     @include tablet {
+      flex: 0 1 100%;
       padding-right: 0;
       flex-direction: row;
       align-items: center;
     }
 
     @include mobile {
-      flex-direction: column;
       align-items: flex-start
     }
   }
@@ -51,7 +49,6 @@
     }
 
     @include mobile {
-      flex-direction: column;
       align-items: left;
       flex: 0 0 100%;
       padding-right: 0;
@@ -85,6 +82,7 @@
     @include tablet {
       flex: 0 0 40%;
       margin-top: 0;
+      li { font-size: rem(20); }
     }
 
     @include mobile {
@@ -96,6 +94,7 @@
   &--description {
     flex: 0 0 66.6666%;
     position: relative;
+    display: block !important;
 
     @include tablet {
       flex: 0 0 100%;
@@ -147,7 +146,13 @@
     }
 
     @include mobile {
-      p { font-size: rem(20); }
+      p {
+        font-size: rem(20);
+        hyphens: auto;
+        -webkit-hyphenate-limit-before: 2;
+        -webkit-hyphenate-limit-after: 3;
+        -webkit-hyphenate-limit-lines: 2;
+      }
 
       h1 {
         font-size: rem(48);
@@ -187,13 +192,17 @@
 
       @include mobile {
         left: rem(-100);
-        top: rem(-300);
+        top: rem(-200);
       }
     }
 
     &.two {
       top: rem(140);
       right: rem(-430);
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 }
