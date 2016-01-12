@@ -10,7 +10,7 @@
     var body = $('body');
     var nav = $('.site-header--nav');
     var title = $('.intro-hero--title');
-    var mainSlash1 = $('.main-slash.one');
+    var mainSlash = $('.main-slash');
     var mainSlash2 = $('.main-slash.two');
 
     var navShowPosition = 200;
@@ -48,13 +48,12 @@
       var relativeY = lastScrollY / 3000;
       showHideNav();
       introParallax(relativeY);
-      
+
       ticking = false;
     }
 
     function introParallax(relativeY) {
-      mainSlash1.css("Transform", "translate3d(0," + pos(0, -1200, relativeY, 0) + 'px, 0)');
-      mainSlash2.css("Transform", "translate3d(0," + pos(0, -1200, relativeY, 0) + 'px, 0)');
+      mainSlash.css("Transform", "translate3d(0," + pos(0, -1200, relativeY, 0) + 'px, 0)');
     }
 
     function showHideNav() {

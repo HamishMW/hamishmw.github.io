@@ -31,16 +31,6 @@ $green: #50e3c2;
 $indigo: #5938ff;
 
 // Breakpoints
-$mobile-width: 400px;
+$mobile-width: 500px;
 $tablet-width: 768px;
 $desktop-width: 1000px;
-
-// Mixins
-@mixin slash-line {
-  height: rem(700);
-  width: 1px;
-  display: block;
-  background: $grey;
-  position: absolute;
-  transform: rotate(-$slash-angle);
-}

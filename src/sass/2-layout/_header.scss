@@ -18,11 +18,15 @@
     z-index: 900;
     color: $green;
 
-    @media (min-width: $total-width + strip-units($header-outset* 2)) {
+    @media (min-width: 1210px) {
       margin-left: -$header-outset;
     }
 
-    @include max-width {
+    @media (max-width: 1210px) {
+      left: 0;
+    }
+
+    @include tablet {
       position: absolute;
     }
   }
