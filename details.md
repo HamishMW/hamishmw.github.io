@@ -1,6 +1,6 @@
 ---
 layout: details
-title: Details
+title: Hamish Williams / Details
 ref: details
 permalink: /details/
 ---

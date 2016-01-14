@@ -1,6 +1,6 @@
 @import "../0-vendor/neat/neat-helpers";
 
-// Grid
+// Grid and layout
 $column: 90px;
 $gutter: 40px;
 $outer-gutter: 20px;
@@ -9,6 +9,9 @@ $max-width: 980px;
 
 $header-height: rem(80);
 $slash-angle: 33.5deg;
+
+// Animations
+$b-fastin-slowout: cubic-bezier(0.4, 0, 0.2, 1);
 
 // Typography
 $fallback-fonts: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;

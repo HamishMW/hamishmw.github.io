@@ -166,9 +166,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    mix-blend-mode: multiply;
     z-index: 99;
     pointer-events: none;
+    mix-blend-mode: multiply;
+
+    // Hack for edge
+    @supports (-ms-accelerator:true) {
+      opacity: 0.85;
+    }
   }
 
   .main-slash {

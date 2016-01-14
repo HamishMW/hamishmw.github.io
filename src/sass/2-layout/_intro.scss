@@ -19,24 +19,80 @@
     }
   }
 
+  &--textmask {
+    z-index: 100;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    @keyframes load-mask {
+      0%, 100% {
+        @include transform(scale3d(0, 1, 1));
+      }
+
+      40%, 60% {
+        @include transform(scale3d(1, 1, 1));
+      }
+    }
+
+    // &:first-child:after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: -1em;
+    //   height: 4px;
+    //   width: calc(100% + 2em);
+    //   background-color: $text-color;
+    //   animation: load-mask 1s 0.3s both;
+    // }
+  }
+
   &--title {
     text-transform: uppercase;
     font-size: rem(72);
     font-weight: $bold-weight;
     letter-spacing: 0.06em;
     text-align: center;
-    margin-bottom: rem(20);
-    z-index: 100;
+    margin-bottom: 0;
     margin-top: $header-height / 2;
+    opacity: 0;
+    animation: reveal-up 0.6s $b-fastin-slowout forwards;
+    margin-bottom: rem(20);
 
     &:before {
       content: '';
+      opacity: 0;
       display: flex;
       border-top: 4px solid $text-color;
       width: rem(103);
       margin-left: auto;
       margin-right: auto;
       margin-bottom: rem(20);
+      animation: line-reveal 0.6s $b-fastin-slowout 0.2s forwards;
+    }
+
+    @keyframes reveal-up {
+      0% {
+        opacity: 1;
+        @include transform(translateY(100%));
+      }
+
+      100% {
+        opacity: 1;
+        @include transform(translateY(0));
+      }
+    }
+
+    @keyframes line-reveal {
+      0% {
+        opacity: 0;
+        @include transform(translateY(rem(40)));
+      }
+
+      100% {
+        opacity: 1;
+        @include transform(translateY(0));
+      }
     }
 
     @include tablet {
@@ -45,28 +101,42 @@
       margin-top: rem(30);
     }
 
-    @include mobile {
-      margin-top: rem(20);
+    // @include mobile {
+    //   margin-top: rem(20);
 
-      &:after {
-        content: '';
-        display: flex;
-        border-top: 4px solid $text-color;
-        width: rem(103);
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: rem(27);
-        margin-bottom: rem(2);
-      }
-    }
+    //   &:after {
+    //     content: '';
+    //     display: flex;
+    //     border-top: 4px solid $text-color;
+    //     width: rem(103);
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     margin-top: rem(27);
+    //     margin-bottom: rem(2);
+    //   }
+    // }
   }
 
   &--description {
+    display: block;
     font-size: rem(24);
     font-weight: $medium-weight;
     letter-spacing: 0.05em;
     text-align: center;
-    z-index: 100;
+    opacity: 0;
+    animation: reveal-down 0.6s $b-fastin-slowout forwards;
+
+    @keyframes reveal-down {
+      0% {
+        opacity: 1;
+        @include transform(translateY(rem(-40)));
+      }
+
+      100% {
+        opacity: 1;
+        @include transform(translateY(0));
+      }
+    }
 
     @include mobile {
      font-size: rem(20);
@@ -113,12 +183,49 @@
     }
   }
 
+  @keyframes reveal-left {
+    0% {
+      opacity: 0;
+      @include transform(translateX(rem(40)));
+    }
+
+    100% {
+      opacity: 1;
+      @include transform(translateX(0));
+    }
+  }
+
+  @keyframes reveal-right {
+    0% {
+      opacity: 0;
+      @include transform(translateX(rem(-40)));
+    }
+
+    100% {
+      opacity: 1;
+      @include transform(translateX(0));
+    }
+  }
+
+  .slash-wrapper {
+    overflow: visible;
+    opacity: 0;
+  }
+
+  .slash-wrapper:first-child {
+    animation: reveal-left 1.2s $b-fastin-slowout 0.4s forwards;
+  }
+
+  .slash-wrapper:last-child {
+    animation: reveal-right 1.2s $b-fastin-slowout 0.4s forwards;
+  }
+
   .main-slash.one {
     $sprite-width: rem(8103);
     left: rem(160);
     top: rem(230);
 
-    @keyframes snowFall {
+    @keyframes snow-fall {
        100% { transform: translateX(-$sprite-width); }
     }
 
@@ -146,7 +253,7 @@
       height: rem(300);
       position: relative;
       background: url('/dist/img/snow-sprite.png') no-repeat;
-      animation: snowFall 1.4s steps(37) infinite;
+      animation: snow-fall 1.4s steps(37) infinite;
     }
 
     .sprite:after {
@@ -182,7 +289,7 @@
     $bg-color: #8aefdc;
     left: rem(120);
 
-    @keyframes mountainPan {
+    @keyframes mountain-pan {
       0% {
         transform: translateX(-20%) skewX(-$slash-angle);
       }
@@ -206,7 +313,7 @@
     }
 
     &.is-animating .slash-image {
-      animation: mountainPan 50s linear infinite alternate;
+      animation: mountain-pan 50s linear infinite alternate;
 
       @include mobile {
         animation: none;
@@ -233,5 +340,5 @@
   margin-bottom: 100px;
   max-width: $max-width;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
