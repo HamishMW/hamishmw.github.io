@@ -11,6 +11,8 @@ github_username:  HamishMW
 markdown: kramdown
 gems:
   - jekyll-sitemap
+sass:
+    sass_dir: src/sass
 
 # Ignore when compiling
 exclude:
