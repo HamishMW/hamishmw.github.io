@@ -74,24 +74,24 @@
     @keyframes reveal-up {
       0% {
         opacity: 1;
-        @include transform(translateY(100%));
+        transform: translateY(100%);
       }
 
       100% {
         opacity: 1;
-        @include transform(translateY(0));
+        transform: translateY(0);
       }
     }
 
     @keyframes line-reveal {
       0% {
         opacity: 0;
-        @include transform(translateY(rem(40)));
+        transform: translateY(rem(40));
       }
 
       100% {
         opacity: 1;
-        @include transform(translateY(0));
+        transform: translateY(0);
       }
     }
 

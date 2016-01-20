@@ -9,17 +9,14 @@
   <link href="{{ site.baseurl }}/dist/img/favicon.png" rel="shortcut icon">
   <link href="{{ site.baseurl }}/dist/img/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
 
-  <link rel="stylesheet" href="{{ "/dist/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
-  <style type="text/css">
-    {% capture include_to_scssify %}
-      {% include critical.scss %}
-    {% endcapture %}
-    {{ include_to_scssify | scssify }}
-  </style>
+  <script>
+    {% include font-loader.js %}
+  </script>
 
+  <link rel="stylesheet" href="{{ "/dist/css/main.css" | prepend: site.baseurl }}">
   <script src="{{ "/dist/js/app.js" | prepend: site.baseurl }}" async></script>
 
   <script>
