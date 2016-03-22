@@ -1,18 +1,27 @@
 # Site settings
 title: Hamish Williams / Full-Process Designer
-email: your-email@domain.com
-description: "Yeah, I'm a designer"
+email: tr4nsfuse@gmail.com
+description: "Hey, I'm Hamish. I live and breathe full process of design, starting from exploration and ideation through to the final product."
 baseurl: ""
 url: "https://www.hamishw.com"
+
 twitter_username: HamishMW
 github_username:  HamishMW
+
+experience:
+  Smart Sparrow:
+    - UX/UI Designer
+  Bold Horizon:
+    - Graphic Designer
+  Freelance:
+    - Graphic Designer
 
 # Build settings
 markdown: kramdown
 gems:
   - jekyll-sitemap
 sass:
-    sass_dir: src/sass
+  sass_dir: src/sass
 
 # Ignore when compiling
 exclude:

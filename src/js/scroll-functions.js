@@ -6,6 +6,7 @@
     var ticking = false;
     var lastScrollY = 0;
     var lastClientY = 0;
+    var initDelta = 0;
 
     var body = $('body');
     var nav = $('.site-header--nav');
@@ -47,13 +48,14 @@
 
       var relativeY = lastScrollY / 3000;
       showHideNav();
-      introParallax(relativeY);
+      parallax(mainSlash, relativeY);
 
       ticking = false;
     }
 
-    function introParallax(relativeY) {
-      mainSlash.css("Transform", "translate3d(0," + pos(0, -1200, relativeY, 0) + 'px, 0)');
+    function parallax(element, relativeY) {
+      element.css("Transform", "translate3d(0," + pos(0, -1200, relativeY, 0) + 'px, 0)');
+      element.data("currentDelta", 0);
     }
 
     function showHideNav() {

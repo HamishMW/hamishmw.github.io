@@ -26,6 +26,7 @@ $spacing-unit: rem(30);
 $total-width: $max-width + $outer-gutter * 2;
 
 // Color
+$black: #000000;
 $text-color: #414141;
 $background-color: #ffffff;
 $white: #ffffff;
@@ -37,3 +38,11 @@ $indigo: #5938ff;
 $mobile-width: 500px;
 $tablet-width: 768px;
 $desktop-width: 1000px;
+
+// Mixins
+@mixin hyphenate() {
+  hyphens: auto;
+  -webkit-hyphenate-limit-before: 2;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-lines: 2;
+}

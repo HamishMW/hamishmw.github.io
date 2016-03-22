@@ -41,4 +41,4 @@ function loadFont(fontName, woffUrl, woff2Url) {
     return f.status === 'loading';
   }
 }
-loadFont('sourceSansPro', '/dist/css/fonts-woff.css', '/dist/css/fonts-woff2.css');
+loadFont('ars_maquette', '/dist/css/fonts-woff.css', '/dist/css/fonts-woff2.css');

@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<div class="profile--side-info">
+  <div class="location"><span class="highlight">Location</span> Sydney</div>
+  <div class="divider"></div>
+  <div class="role">Designer</div>
+</div>
+
 <section class="profile">
   <div class="profile--wrapper">
     <aside class="profile--sidebar">
@@ -11,16 +17,19 @@ layout: default
       <div class="profile--experience">
         <h4>Experience</h4>
         <ul>
-          <li>Smart Sparrow<br>UX/UI Designer</li>
-          <li>Bold Horizon<br>Graphic Designer</li>
-          <li>Freelance<br>Graphic Designer</li>
+          {% for job in site.experience %}
+            <li>
+              <span class="job">{{ job[0] }}</span><br>
+              <span class="role">{{ job[1] }}</span>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </aside>
     <div class="profile--description">
       <h1>Details</h1>
       {{ content }}
-      <a href="#">Send me an email</a>
+      <a href="mailto:{{ site.email }}">Send me an email</a>
     </div>
   </div>
   <div class="profile--slashes">
