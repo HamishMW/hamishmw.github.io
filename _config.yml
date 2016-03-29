@@ -1,10 +1,11 @@
 # Site settings
 title: Hamish Williams / Full-Process Designer
 email: tr4nsfuse@gmail.com
-description: "Hey, I'm Hamish. I live and breathe full process of design, starting from exploration and ideation through to the final product."
+description: "Hey, I'm Hamish. I obsess over the full process of design, starting from exploration and ideation through to the final product."
 baseurl: ""
 url: "https://www.hamishw.com"
 
+# Profile details
 twitter_username: HamishMW
 github_username:  HamishMW
 

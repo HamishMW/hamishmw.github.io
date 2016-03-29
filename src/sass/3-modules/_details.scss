@@ -29,6 +29,7 @@ $details-color: $indigo;
     @include position(absolute, 50vh rem(20) null null);
     transform: rotate(90deg) translateX(50%);
     transform-origin: top right;
+    letter-spacing: 0.08em;
     font-weight: $bold-weight;
     text-transform: uppercase;
     display: flex;
